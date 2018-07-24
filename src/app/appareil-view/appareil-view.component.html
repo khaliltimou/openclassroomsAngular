@@ -1,0 +1,18 @@
+
+<div class="col-xs-12">
+  <h2>Mes appareils</h2>
+  <ul class="list-group">
+    <app-appareil *ngFor="let appareil of appareils; let i = index"
+                  [indexOfAppareil]="i"
+                  [appareilName]="appareil.appareilName"
+                  [appareilStatus]="appareil.appareilStatus"
+                  [id]="appareil.id"
+    ></app-appareil>
+  </ul>
+  <button class="btn btn-success" [disabled]="!isAuth"
+          (click)="onAllumer()"> Tout allumer
+  </button>
+  <button class="btn btn-danger" [disabled]="!isAuth"
+          (click)="onEtteindre()"> Tout éteindre
+  </button>
+</div>

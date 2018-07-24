@@ -1,0 +1,12 @@
+<p>Mis à jour : {{ lastUpdate | async | date: 'y MMMM EEEE d' | uppercase }}</p>
+<li class="list-group-item">
+  <div class="row">
+    <div class="col col-md-2">
+      <i class="glyphicon "
+         [ngClass]="appareilStatus === 'OFF' ? 'glyphicon-ban-circle' : 'glyphicon-ok-circle'"></i></div>
+    <div class="col col-md-4"><span [ngStyle]="{color: getColor()}">Appareil : {{appareilName}} -- Status : {{getStatus()}} </span></div>
+    <div class="col col-md-2"><a [routerLink]="[id]">Détails</a></div>
+    <div class="col col-md-2"><button class="btn btn-success" (click)="onSwitchOn()" [disabled]="appareilStatus==='ON'">ON</button></div>
+    <div class="col col-md-2"><button class="btn btn-danger" (click)="onSwitchOff()" [disabled]="appareilStatus==='OFF'">OFF</button></div>
+  </div>
+</li>
