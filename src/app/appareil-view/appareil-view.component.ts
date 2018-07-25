@@ -37,7 +37,7 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
   }
 
   onEteindre() {
-    if(confirm('Etes-vous sûr de vouloir éteindre tous vos appareils ?')) {
+    if (confirm('Etes-vous sûr de vouloir éteindre tous vos appareils ?')) {
       this.appareilService.switchOffAll();
     } else {
       return null;
@@ -48,4 +48,10 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
     this.appareilSubscription.unsubscribe();
   }
 
+  onSave() {
+    this.appareilService.saveAppareilToServer();
+  }
+  onFetch() {
+    this.appareilService.getAppareilFromServer();
+  }
 }
